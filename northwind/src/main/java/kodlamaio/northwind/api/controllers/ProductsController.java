@@ -46,6 +46,10 @@ public class ProductsController {
 	public Result add(@RequestBody Product product){
 		return this.productService.add(product);
 	}
+	@PostMapping("/delete")
+	public Result delete(@RequestBody Product product){
+		return this.productService.delete(product);
+	}
 	
 	@GetMapping("/getByProductName")
 	public DataResult<Product> getByProductName(@RequestParam String productName){

@@ -42,6 +42,12 @@ public class ProductManager implements ProductService {
 		this.productDao.save(product);
 		return new SuccessResult("Ürün eklendi");
 	}
+	
+	@Override
+	public Result delete(Product product) {
+		this.productDao.delete(product);
+		return new SuccessResult("Ürün silindi");
+	}
 
 	@Override
 	public DataResult<Product> getByProductName(String productName) {
@@ -105,5 +111,7 @@ public class ProductManager implements ProductService {
 	public DataResult<List<ProductWithCategoryDto>> getProductWithCategoryDetails() {
 		return new SuccessDataResult<List<ProductWithCategoryDto>>(this.productDao.getProductWithCategoryDetails(),"Data listelendi");
 	}
+
+	
 
 }

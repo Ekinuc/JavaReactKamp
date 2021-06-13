@@ -16,6 +16,8 @@ public interface ProductService {
 	DataResult<List<Product>> getAll(int pageNo, int pageSize);
 	Result add(Product product);
 	
+	Result delete(Product product);
+	
 	DataResult<Product> getByProductName(String productName);
 	
 	DataResult<Product> getByProductNameAndCategoryId(String productName, int categoryId);
